@@ -19,7 +19,15 @@ public class SecurityConfig {
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
             .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
-            .formLogin(Customizer.withDefaults());
+            .formLogin(Customizer.withDefaults())
+            .rememberMe(rememberMe -> rememberMe
+                    .alwaysRemember(true)
+                    .tokenValiditySeconds(3600)
+                    .userDetailsService(userDetailsService())
+                    .rememberMeParameter("remember") // default: remember-me
+                    .rememberMeCookieName("remember") // default: remember-me
+                    .key("custom-key")
+            );
 
     return http.build();
   }
