@@ -25,4 +25,9 @@ public class  IndexController {
   public String failed() {
     return "failed";
   }
+
+  @GetMapping("/logoutSuccess")
+    public String logoutSuccess() {
+        return "logoutSuccess";
+    }
 }
