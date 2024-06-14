@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class  IndexController {
 
   @GetMapping("/")
-  public String index() {
+  public String index(String customParam) {
+    if(customParam != null) {
+      return "custom";
+    } else {
+
     return "index";
+    }
   }
 
   @GetMapping("/loginPage")
