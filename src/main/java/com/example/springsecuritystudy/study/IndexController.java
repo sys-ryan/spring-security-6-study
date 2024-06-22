@@ -25,4 +25,14 @@ public class  IndexController {
   public String failed() {
     return "failed";
   }
+
+  @GetMapping("/invalidSessionUrl")
+    public String invalidSessionUrl() {
+        return "invalidSessionUrl";
+    }
+
+  @GetMapping("/expiredUrl")
+  public String expiredUrl() {
+      return "expiredUrl";
+  }
 }
