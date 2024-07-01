@@ -25,4 +25,15 @@ public class  IndexController {
   public String failed() {
     return "failed";
   }
+
+  @GetMapping("/login")
+  public String login() {
+      return "login";
+  }
+
+  @GetMapping("/denied")
+  public String denied() {
+      return "denied";
+  }
+
 }
