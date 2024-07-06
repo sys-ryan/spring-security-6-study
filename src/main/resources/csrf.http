@@ -1,0 +1,8 @@
+POST http://localhost:8080/csrf
+Content-Type: application/json
+
+###
+POST http://localhost:8080/csrf
+Content-Type: application/x-www-form-urlencoded
+
+_csrf = ROYzLyTvInJR7n23JHp8qWNUwK0KWnkZGkVNgppD-X8tywDNINMLFkfaFUF83h6FFVdIkVZi7ZQ8aBo0Kyd_tawhwE4f_jH4
