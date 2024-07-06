@@ -15,21 +15,22 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-  @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http
-            .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
-            .formLogin(Customizer.withDefaults());
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .formLogin(Customizer.withDefaults())
+        ;
 
-    return http.build();
-  }
+        return http.build();
+    }
 
-  @Bean
-  public UserDetailsService userDetailsService() {
-    UserDetails user = User.withUsername("user")
-        .password("{noop}1111")
-        .roles("USER").build();
+    @Bean
+    public UserDetailsService userDetailsService() {
+        UserDetails user = User.withUsername("user")
+                .password("{noop}1111")
+                .roles("USER").build();
 
-    return new InMemoryUserDetailsManager(user);
-  }
+        return new InMemoryUserDetailsManager(user);
+    }
 }
