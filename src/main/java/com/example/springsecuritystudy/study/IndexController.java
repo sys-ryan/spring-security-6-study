@@ -1,28 +1,34 @@
 package com.example.springsecuritystudy.study;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class  IndexController {
+public class IndexController {
 
-  @GetMapping("/")
-  public String index() {
-    return "index";
-  }
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
 
-  @GetMapping("/loginPage")
-  public String loginPage() {
-    return "loginPage";
-  }
+    @GetMapping("/custom")
+    public String custom() {
+        return "custom";
+    }
 
-  @GetMapping("/home")
-  public String home() {
-    return "home";
-  }
+    @GetMapping("/user")
+    public String user() {
+        return "user";
+    }
 
-  @GetMapping("/faileddd")
-  public String failed() {
-    return "failed";
-  }
+    @GetMapping("/user/{name}")
+    public String userName(@PathVariable(value = "name") String name) {
+        return name;
+    }
+
+    @GetMapping("/admin/db")
+    public String admin() {
+        return "admin";
+    }
 }
