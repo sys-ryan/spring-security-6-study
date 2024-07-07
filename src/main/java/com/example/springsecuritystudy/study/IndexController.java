@@ -4,25 +4,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class  IndexController {
+public class IndexController {
 
-  @GetMapping("/")
-  public String index() {
-    return "index";
-  }
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
 
-  @GetMapping("/loginPage")
-  public String loginPage() {
-    return "loginPage";
-  }
+    @GetMapping("/api/photos")
+    public String photos() {
+        return "photos";
+    }
 
-  @GetMapping("/home")
-  public String home() {
-    return "home";
-  }
-
-  @GetMapping("/faileddd")
-  public String failed() {
-    return "failed";
-  }
+    @GetMapping("/oauth/login")
+    public String login() {
+        return "oauthLogin";
+    }
 }
